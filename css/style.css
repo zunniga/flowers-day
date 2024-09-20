@@ -75,38 +75,45 @@ body::before {
     background-color: rgb(50, 194, 194);
 }
 
-.greetings{
-    font-size: 7rem;
+.greetings {
+    font-size: 4rem;
     font-weight: 900;
+    text-align: center;
+    background: linear-gradient(45deg, #00b7ff, #d8e704, #0000ff, #07b8ee); /* Degradado de colores */
+    background-size: 300%; /* Tamaño del fondo más grande para permitir el movimiento */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; /* El texto toma el color del degradado */
+    animation: reactiveColorsMove 5s ease infinite; /* Animación para mover los colores */
+    display: inline-block;
 }
-.greetings > span{
-    animation: glow 7.5s infinite;
-}
-@keyframes glow{
-    0%, 100%{
-        color: #fff;
-        text-shadow: 0 0 12px #dcd904, 0 0 50px #dcd904, 0 0 100px #dcd904;
+
+/* Animación de movimiento de colores */
+@keyframes reactiveColorsMove {
+    0% {
+        background-position: 0% 50%;
     }
-    10%, 90%{
-        color: #111;
-        text-shadow: none;
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
     }
 }
-.greetings > span:nth-child(2){
-    animation-delay: .2s ;
+
+.greetings span {
+    display: inline-block;
+    background: inherit;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
-.greetings > span:nth-child(3){
-    animation-delay: .4s ;
+
+/* Estilos responsivos para móviles */
+@media screen and (max-width: 480px) {
+    .greetings {
+        font-size: 2rem; /* Reducir tamaño en móviles */
+    }
 }
-.greetings > span:nth-child(4){
-    animation-delay: .6s;
-}
-.greetings > span:nth-child(5){
-    animation-delay: .8s;
-}
-.greetings > span:nth-child(6){
-    animation-delay: 1s;
-}
+
 
 .description{
     font-size: 1.5rem;

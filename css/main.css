@@ -49,29 +49,27 @@ body {
   opacity: 0;
   animation: fadeIn 3s ease-in-out forwards;
   text-align: center;
+  font-size: 3rem; /* Tamaño para desktop */
 }
 
-.titulo {
-  margin-bottom: 800px;
-  font-family: "sans-serif", Arial, sans-serif;
-  color: white;
-  position: absolute;
-  font-weight: bold;
-  letter-spacing: 10px;
-  opacity: 0;
-  animation: fadeIn 3s ease-in-out forwards; /* Duración de 3 segundos */
-  text-align: center;
+/* Para pantallas móviles (menos de 768px de ancho) */
+@media (max-width: 768px) {
+  .titulo {
+    font-size: 1.5rem; /* Ajusta el tamaño de la fuente */
+    letter-spacing: 5px; /* Ajusta el espacio entre letras */
+    margin-bottom: 600px; /* Ajusta el margen inferior para móviles */
+  }
 }
 
 /* Definición de la animación fadeIn */
 @keyframes fadeIn {
   0% {
     opacity: 0;
-    transform: translateY(65px); /* Empieza un poco abajo */
+    transform: translateY(15px);
   }
   100% {
     opacity: 1;
-    transform: translateY(0); /* Se mueve a su posición original */
+    transform: translateY(0);
   }
 }
 
