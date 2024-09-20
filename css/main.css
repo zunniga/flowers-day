@@ -57,7 +57,7 @@ body {
   .titulo {
     font-size: 1.5rem; /* Ajusta el tamaño de la fuente */
     letter-spacing: 5px; /* Ajusta el espacio entre letras */
-    margin-bottom: 600px; /* Ajusta el margen inferior para móviles */
+    margin-bottom: 550px; /* Ajusta el margen inferior para móviles */
   }
 }
 
