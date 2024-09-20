@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;1,900&display=swap');
+*{
+    font-family: 'Poppins',cursive;
+}
+body {
+    color: azure;
+    width: 100%;
+    height: 82vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    position: relative; /* Para que los pseudo-elementos se posicionen correctamente */
+    overflow: hidden; /* Evitar scroll si las estrellas se mueven fuera del body */
+}
+
+body::before, body::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background-repeat: repeat;
+    background-image: radial-gradient(white 1px, transparent 1px);
+    z-index: -1; /* Colocar las estrellas detrás del contenido */
+    animation: moveStars 50s linear infinite; /* Movimiento de las estrellas */
+    opacity: 0.3; /* Suavizar el brillo */
+}
+
+body::after {
+    background-size: 100px 100px; /* Tamaño de las estrellas */
+    animation-duration: 100s; /* Diferente velocidad para las estrellas pequeñas */
+}
+
+body::before {
+    background-size: 200px 200px; /* Tamaño de las estrellas más grandes */
+    animation-duration: 50s; /* Diferente velocidad para las estrellas grandes */
+}
+
+@keyframes moveStars {
+    from {
+        transform: translate(0, 0);
+    }
+    to {
+        transform: translate(100%, 100%);
+    }
+}
+
+
+.botones{
+    padding: 9px;
+    border-radius: 80px;
+    background-color: transparent;
+    border: none;
+}
+.credits{
+    margin-top: 10px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.botones a{
+    background-color: #dcd904;
+    padding: 9px;
+    border-radius: 80px;
+    -webkit-border-radius: 80px;
+    -moz-border-radius: 80px;
+    -ms-border-radius: 80px;
+    -o-border-radius: 80px;
+
+}
+
+.botones a:focus{
+    background-color: rgb(50, 194, 194);
+}
+
+.greetings{
+    font-size: 7rem;
+    font-weight: 900;
+}
+.greetings > span{
+    animation: glow 7.5s infinite;
+}
+@keyframes glow{
+    0%, 100%{
+        color: #fff;
+        text-shadow: 0 0 12px #dcd904, 0 0 50px #dcd904, 0 0 100px #dcd904;
+    }
+    10%, 90%{
+        color: #111;
+        text-shadow: none;
+    }
+}
+.greetings > span:nth-child(2){
+    animation-delay: .2s ;
+}
+.greetings > span:nth-child(3){
+    animation-delay: .4s ;
+}
+.greetings > span:nth-child(4){
+    animation-delay: .6s;
+}
+.greetings > span:nth-child(5){
+    animation-delay: .8s;
+}
+.greetings > span:nth-child(6){
+    animation-delay: 1s;
+}
+
+.description{
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.button a{
+    text-decoration: none;
+    font-size: 1rem;
+    color: #111;
+}
+
+@media screen and (max-width:574px){
+    .greetings{
+        display: block;
+        font-size: 4rem;
+        font-weight: 800;
+        text-align: center;
+    }
+    .description{
+        font-size: 2rem;
+    }
+    
+    .button a{
+        font-size: 1rem;
+    }
+}
